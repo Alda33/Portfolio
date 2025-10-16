@@ -138,10 +138,10 @@ form.addEventListener("submit", (e) => {
   // Si invalide, on empêche l’envoi
   if (!formulaireValide) {
     e.preventDefault();
-  } 
-  // Sinon, Formspree s’en charge tout seul
-
-  
+  } else {
+    console.log("Formulaire valide, Formspree doit prendre le relais");
+    // Ne rien mettre ici : Formspree gère la redirection
+  }
 });
 
 //--------------------------------------------------------------------------------------------------
@@ -153,6 +153,7 @@ mais ils ne réapparaissent pas si besoin, ils n'apparaissent qu'après un submi
 for (let i = 0; i < champs.length; i++) {
   removeSpanVideRegex(champs[i], regex[i]);
 }
+
 
 
 
