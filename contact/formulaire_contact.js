@@ -138,9 +138,13 @@ form.addEventListener("submit", (e) => {
   // Si invalide, on empêche l’envoi
   if (!formulaireValide) {
     e.preventDefault();
-  } // Sinon, Formspree s’en charge tout seul
+  } // Sinon, Formspree s’en charge tout seul et redirige vers la page de validation Formspree
 });
 
+// j'aurais voulu mettre une redirection sur une page html de remerciement, 
+// mais avec Fromspree, impossible de faire fonctionner la redirection (avec input hidden name=_redirect ou name=_next).
+// sinon il faudrait utiliser fetch (d'après chatgpt), pour afficher un message sur la page contact.html,
+// mais impossible en version Formspree gratuite
 
 //--------------------------------------------------------------------------------------------------
 //------------------- APRES LE SUBMIT, SUIVI DE LA FRAPPE POUR EFFACER LES ERREURS ------------------
@@ -151,6 +155,7 @@ mais ils ne réapparaissent pas si besoin, ils n'apparaissent qu'après un submi
 for (let i = 0; i < champs.length; i++) {
   removeSpanVideRegex(champs[i], regex[i]);
 }
+
 
 
 
